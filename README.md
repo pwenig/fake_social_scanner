@@ -1,24 +1,38 @@
-# README
+##### Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The setups steps expect following tools installed on the system.
 
-Things you may want to cover:
+- Github
+- Ruby [2.5.5]
+- Rails [6.1.3]
 
-* Ruby version
+##### 1. Check out the repository
 
-* System dependencies
+```bash
+$ git clone git@github.com:pwenig/social_scanner.git
+$ cd social_scanner
+$ bundle install
+```
 
-* Configuration
+##### 2. Create and setup the database
 
-* Database creation
+```ruby
+bundle exec rake db:create
+bundle exec rake db:migrate
+```
 
-* Database initialization
+##### 4. Run tests
+```ruby
+bundle exec rspec
+```
 
-* How to run the test suite
+##### 4. Start the Rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+```ruby
+bundle exec rails s
+```
 
-* Deployment instructions
-
-* ...
+#### 5. Scan the social networks
+```ruby
+curl localhost:3000
+```
